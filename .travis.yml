@@ -12,9 +12,10 @@ before_install: # get a reasonably new version of python3 and pip
   #- sudo python3 -m pip install --upgrade pip
   - sudo apt-get install python3-setuptools
   - gem install bundler -v 1.17.2
+  - bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
 install:
-  - pip3 install --user -r ./book/website/requirements.txt # install things for the book
-  - pip3 install --user -U attrs pytest # the installed versions in Travis are too old!
+  - sudo pip3 install --user -r ./book/website/requirements.txt # install things for the book
+  - sudo pip3 install --user -U attrs pytest # the installed versions in Travis are too old!
 script:
   # Below here, "scripts" directory refers to the one in book/website:
   - cd ./book/website

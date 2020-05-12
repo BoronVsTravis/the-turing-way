@@ -8,7 +8,7 @@ env:
     - PATH=/opt/python/3.7.1/bin:$PATH
 before_install: # get a reasonably new version of python3 and pip
   - sudo apt-get install python3-pip
-  - sudo -H pip3 install --upgrade pip
+  - sudo python3 -m pip3 install --upgrade pip
   - sudo apt-get install python3-setuptools
 install:
   - pip3 install --user -r ./book/website/requirements.txt # install things for the book
